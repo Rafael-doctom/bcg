@@ -126,7 +126,7 @@ var hiatusList = [
 function hiatusRankCheck(){
   var diffDays = timer("up", latestRelease, "count");
   var hiatusRank = 0;
-  var nextHiatusLength = hiatusList[1][4]; //reference to the longest hiatus
+  var nextHiatusLength = hiatusList[8][4]; //reference to the longest hiatus
   for(var i = 1; i < hiatusList.length; i++){
     if(hiatusList[i][4] > diffDays){
       hiatusRank += 1;
