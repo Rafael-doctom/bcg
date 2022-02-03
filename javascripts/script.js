@@ -1,6 +1,6 @@
 var oneDay = 24*60*60*1000;
-var latestRelease = new Date("2021-10-09T09:00:00-06:00"); // Newest Episode Release
-var nextRelease = new Date("2022-02-12T09:30:00-06:00"); // Next Episode release
+var latestRelease = new Date("2021-10-09T08:00:00-06:00"); // Newest Episode Release
+var nextRelease = new Date("2022-02-12T08:00:00-06:00"); // Next Episode release
 var mode = 0; //DD:HH:MM:SS mode is default
 var lastHiatusMention = null;
 
@@ -120,7 +120,7 @@ var hiatusList = [
   ['Garage Tales; Animal Farm', 'Desserted; The Gifted', 'Feb 8 2020', 'Jul 11 2020',154,''],
   ['Quiet Please; Chipwrecked', 'Chipocalypse Now', 'Sep 19 2020', 'Jan 16 2021',119,''],
   ["Cousin Jilly; Gloria's Café", 'Squashed!', 'Apr 3 2021', 'Oct 9 2021',189,'Halloween Special'],
-  ['Squashed!', '???', 'Oct 9 2021','Feb 12 2022',126,'']
+  ['Squashed!', 'Boss Life; Papaganda', 'Oct 9 2021','Feb 12 2022',126,'']
 ];
   
 function hiatusRankCheck(){
