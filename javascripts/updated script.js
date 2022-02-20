@@ -1,6 +1,6 @@
 var oneDay = 24*60*60*1000;
-var latestRelease = new Date("2022-02-19T08:00:00-06:00"); // Newest Episode Release
-var nextRelease = new Date("2022-02-26T08:00:00-06:00"); // Next Episode release
+var latestRelease = new Date("2022-02-26T08:00:00-06:00"); // Newest Episode Release
+var nextRelease = new Date("2022-03-05T08:00:00-06:00"); // Next Episode release
 var mode = 0; //DD:HH:MM:SS mode is default
 var lastHiatusMention = null;
 
