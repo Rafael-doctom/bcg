@@ -14,9 +14,9 @@ jobs:
       - name: delete original script
         run: rm -f javascripts/script.js
       - name: rename updated index
-        run: mv updateindex.html index.html
+        run: mv -f updateindex.html index.html
       - name: rename updated script
-        run: mv javascripts/updatescript.js javascripts/script.js
+        run: mv -f javascripts/updatescript.js javascripts/script.js
         
       - name: Commit files
         run: |
