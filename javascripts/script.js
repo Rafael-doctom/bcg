@@ -1,20 +1,19 @@
 //Automatic episode change
 var episodeList = [
-  ['Big Trouble', '???', new Date("2022-03-12T10:00:00-06:00"), ]
+  ['Big Trouble', '???', new Date("2022-03-12T10:00:00-05:00")]
 ];
-var startDate = new Date("2022-03-26T10:00:00-06:00"); // Next Episode release
+var startDate = new Date("2022-03-26T10:00:00-05:00");
 var today = Date.now();
-var weeksPassed = 0; //Math.floor((today - Date.parse(startDate))/(24*3600*1000*7));
+var weeksPassed = 0; //Math.floor((today - Date.parse(startDate))/(24*3600*1000*7)); //comment out equation when on hiatus
 var latestRelease = episodeList[weeksPassed][2];
 var nextRelease = episodeList[weeksPassed][3];
 document.getElementById("previousEpisode").innerHTML = episodeList[weeksPassed][0];
-document.getElementById("nextEpisode").innerHTML = episodeList[weeksPassed][1]
+document.getElementById("nextEpisode").innerHTML = episodeList[weeksPassed][1];
 
 var oneDay = 24*60*60*1000;
 var mode = 0; //DD:HH:MM:SS mode is default
 var lastHiatusMention = null;
 
-//voodoo magic
 function GetThen(yourUrl, onload){
   var Httpreq = new XMLHttpRequest();
   Httpreq.open("GET",yourUrl,true);
@@ -51,7 +50,7 @@ function checkSubreddit(response){
   //loads the next 100 if hiatus is not mentioned then runs the function again
   if (lastHiatusMentionThisCheck == null) {
     requestSubredditData(subbredditJSON.data.after);
-  } 
+  }
   else {
     lastHiatusMention = lastHiatusMentionThisCheck;
   }
@@ -99,13 +98,13 @@ function timer(updown, zeroTime, id){
   }
   else if (mode == 1){
     if (diffDays == 1){
-      document.getElementById(id).innerHTML =  diffDays + " Day";  
+      document.getElementById(id).innerHTML =  diffDays + " Day";
     }
     else if (diffDays == 0){
       document.getElementById(id).innerHTML =  diffHours + " Hours";
     }
     else {
-      document.getElementById(id).innerHTML =  diffDays + " Days";    
+      document.getElementById(id).innerHTML =  diffDays + " Days";
     }
     document.getElementById(id).style.fontSize = "100%";
   }
@@ -118,7 +117,7 @@ function timer(updown, zeroTime, id){
   }
   return diffDays
 };
-  
+
 //The Grand Array of Hiatuses
 var hiatusList = [
   ['Last Episode','Next Episode','Preceding Release','Following Release','Hiatus Length','Note'],
@@ -133,7 +132,7 @@ var hiatusList = [
   ['Squashed!', 'Boss Life; Papaganda', 'Oct 9 2021','Feb 12 2022',126,''],
   ['Trivia Night; Big Trouble', '???', 'Mar 12 2022','???',,'']
 ];
-  
+
 function hiatusRankCheck(){
   var diffDays = timer("up", latestRelease, "count");
   var hiatusRank = 0;
@@ -147,34 +146,34 @@ function hiatusRankCheck(){
     }
   }
   var suffix;
-    if(hiatusRank % 10 == 1 && hiatusRank != 11){
-      suffix = "st";
-    }
-    else if(hiatusRank % 10 == 2 && hiatusRank != 12){
-      suffix = "nd";
-    }
-    else if(hiatusRank % 10 == 3 && hiatusRank != 13){
-      suffix = "rd";
-    }
-    else if(hiatusRank == 0){
-      suffix = "The";
-    }
-    else suffix = "th";
-    if(hiatusRank > 0){
-      document.getElementById("hiatusRank").innerHTML =  hiatusRank + suffix;
-    }
-    else{
-      document.getElementById("hiatusRank").innerHTML =  suffix;
-    }
-    document.getElementById("nextHiatusLength").innerHTML =  nextHiatusLength;
-    var nextHiatusLengthDate = new Date(latestRelease.getTime() + (nextHiatusLength * 86400000));
-    return nextHiatusLengthDate;
+  if(hiatusRank % 10 == 1 && hiatusRank != 11){
+    suffix = "st";
   }
-  
+  else if(hiatusRank % 10 == 2 && hiatusRank != 12){
+    suffix = "nd";
+  }
+  else if(hiatusRank % 10 == 3 && hiatusRank != 13){
+    suffix = "rd";
+  }
+  else if(hiatusRank == 0){
+    suffix = "The";
+  }
+  else suffix = "th";
+  if(hiatusRank > 0){
+    document.getElementById("hiatusRank").innerHTML =  hiatusRank + suffix;
+  }
+  else{
+    document.getElementById("hiatusRank").innerHTML =  suffix;
+  }
+  document.getElementById("nextHiatusLength").innerHTML =  nextHiatusLength;
+  var nextHiatusLengthDate = new Date(latestRelease.getTime() + (nextHiatusLength * 86400000));
+  return nextHiatusLengthDate;
+}
+
 //makes an HTML table from the array
 function createTable(array) {
   var diffDays = timer("up", latestRelease, "count");
-  array[array.length - 1][4] = diffDays + " days and counting";
+  array[array.length - 1][4] = diffDays + " days and counting"; //comment out when not on hiatus
   for(var i = 0; i < array.length ; i++){
     var row = document.createElement('tr');
     row.setAttribute("id", "myTr" + i);
@@ -187,14 +186,14 @@ function createTable(array) {
     };
   };
 };
-  
+
 //does the ticking
 window.setInterval(function(){
   timer("up", latestRelease, "count");
-  timer("down", hiatusRankCheck(), "count2"); //Comment out when not on hiatus
+  timer("down", hiatusRankCheck(), "count2"); //comment out when not on hiatus
   timer("up", lastHiatusMention, "count3");
-  //timer("down", nextRelease, "count4"); //Comment out when no new release date
+  timer("down", nextRelease, "count4");
 }, 250);
-  
+
 //every 30 seconds, the most recent 100 posts on the subreddit are loaded up again in case there has been a new post that mentions hiatus
 window.setInterval(requestSubredditData, 30000);

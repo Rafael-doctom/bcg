@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="Tracks the length between episodes of the ongoing Disney Channel show,
     Big City Greens as well as keeping a list of these hiatuses.">
-    
+
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" href="images/icon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="javascripts/script.js" defer></script>
     <script src="javascripts/modal.js" defer></script>
     <script src="javascripts/youtube.js" defer></script>
-    <script src="javascripts/script.js" defer></script>
     <script src="javascripts/jquery-3.6.0.min.js"></script>
     <script>
 	    $(window).on("load", function() {
@@ -29,23 +29,22 @@
       gtag('config', 'G-NHP125RXSW');
     </script>
   </head>
-  
+
   <body onload="createTable(hiatusList); requestSubredditData();">
     <div id="loader"></div>
     <div style="display:none;" id="page">
-      
       <div id="info">
         <div class="info-content">
           <span class="close">&times;</span>
           <p>This website tracks the hiatuses of the show Big City Greens. <br> A hiatus is a time period starting from the end 
             of one announced schedule to the begining of another.
-	    <br>This site is <b>not official</b> and is maintained by one person.<br> 
+            <br>This site is <b>not official</b> and is maintained by one person.<br>
             <b>Some planned updates so far:</b> <br>
             Mobile improvements</p>
         </div>
       </div>
       <button id="infoBtn">i</button>
-   
+
       <div class="topnav">
         <a class = "website" href="https://xman2156.github.io/TOH/">The Owl House</a>
         <a class = "website" href="https://xman2156.github.io/arcane/">Arcane</a>
@@ -53,7 +52,7 @@
         <a class = "website" href="https://xman2156.github.io/miraculous/">Miraculous</a>
         <a class = "website" href="https://xman2156.github.io/tgamm/">Molly McGee</a>
         <a class = "active website" href="https://xman2156.github.io/bcg/">Big City Greens</a>
-        <div class="dropdown">
+        <div class= "dropdown">
           <button class="dropbtn">The Graveyard
             <i class="fa-solid fa-caret-down"></i>
           </button>
@@ -84,26 +83,26 @@
         <div class="list">
           <h1> The Grand List of Hiatuses </h1>
           <table id="hiatus"></table>
-          <br> 
+          <br>
           <div class= "reddit">
             Also, it has been <span id="count3">over 1000 posts on /r/BigCityGreens</span> since <a class="links" id="hiatusLink" target="_blank" title="Link to post" href=""> the Last Mention Of The Hiatus here</a>
           </div>
         </div>
         <br>
         <hr class="spacer">
-  
+
         <div class="countdowns">
-          <h2>Time To Next Release<br>"<span id="nextEpisode">xxx</span>"</h2>
-          <h1 style="font-size:250%">    
+          <h2>Time To Next Release<br>"<span id=nextEpisode>xxx</span>"</h2>
+          <h1 style="font-size:250%">
             <span id="count4">Unknown</span>
           </h1>
           <hr class="spacer">
     
-          <h2>Time To <span id="hiatusRank">nth</span> Longest Hiatus<br>(Currently Stands At <span id="nextHiatusLength">n</span> Days)</h2>
+          <!--Comment out from here--> <h2>Time To <span id="hiatusRank">nth</span> Longest Hiatus<br>(Currently Stands At <span id="nextHiatusLength">n</span> Days)</h2>
           <h1 style="font-size:250%">
-            <span id="count2">Not on hiatus</span>
+            <span id="count2">Unknown</span>
           </h1>
-          <hr class="spacer">
+          <hr class="spacer"> <!--to here if not on hiatus-->
         </div>
 
         <div class="trailers">
@@ -116,8 +115,7 @@
 
         <div class="link">
           <h3>
-            <a class="links" target="_blank" href="https://github.com/xman2156"> You can find me on GitHub</a><br>
-            <a class="links" target="_blank" href="https://forms.gle/ybJdgLtCVMfL2EA6A"> Report a bug, request a new feature, or ask a question here</a><br>
+            You can find me on <a class="links" target="_blank" href="https://github.com/xman2156">GitHub</a> & <a class="links" target="_blank" href="https://twitter.com/AnimationHiatus">Twitter</a><br>
             <a class="links" target="_blank" href="https://github.com/TurtleByte/stevenhiatus/tree/gh-pages"> Credit to TurtleByte for original idea</a>
           </h3>
           <br>
