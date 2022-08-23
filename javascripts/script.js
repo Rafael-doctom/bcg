@@ -1,6 +1,6 @@
 //Automatic episode change
 var episodeList = [
-  ['Big Trouble', '???', new Date("2022-03-12T10:00:00-05:00")]
+  ['Rembo; Dirt Jar', 'The Move', new Date("2022-07-30T10:00:00-05:00"), new Date("2022-09-24T10:00:00-05:00")]
 ];
 var startDate = new Date("2022-03-26T10:00:00-05:00");
 var today = Date.now();
@@ -130,7 +130,8 @@ var hiatusList = [
   ['Quiet Please; Chipwrecked', 'Chipocalypse Now', 'Sep 19 2020', 'Jan 16 2021',119,''],
   ["Cousin Jilly; Gloria's Café", 'Squashed!', 'Apr 3 2021', 'Oct 9 2021',189,'Halloween Special'],
   ['Squashed!', 'Boss Life; Papaganda', 'Oct 9 2021','Feb 12 2022',126,''],
-  ['Trivia Night; Big Trouble', '???', 'Mar 12 2022','???',,'']
+  ['Trivia Night; Big Trouble', 'Dependabill; The Delivernator', 'Mar 12 2022','Jul 16, 2022',126,''],
+  ['Rembo; Dirt Jar', 'The Move', 'Jul 30 2022', '???',,'']
 ];
 
 function hiatusRankCheck(){
