@@ -1,6 +1,6 @@
 //Automatic episode change
 var episodeList = [
-  ['Rembo; Dirt Jar', 'The Move', new Date("2022-07-30T10:00:00-05:00"), new Date("2022-09-24T10:00:00-05:00")]
+  ['Pizza Deliverance; Horse Girl', '???', new Date("2022-10-29T10:00:00-05:00")]
 ];
 var startDate = new Date("2022-03-26T10:00:00-05:00");
 var today = Date.now();
@@ -131,7 +131,8 @@ var hiatusList = [
   ["Cousin Jilly; Gloria's Café", 'Squashed!', 'Apr 3 2021', 'Oct 9 2021',189,'Halloween Special'],
   ['Squashed!', 'Boss Life; Papaganda', 'Oct 9 2021','Feb 12 2022',126,''],
   ['Trivia Night; Big Trouble', 'Dependabill; The Delivernator', 'Mar 12 2022','Jul 16, 2022',126,''],
-  ['Rembo; Dirt Jar', 'The Move', 'Jul 30 2022', '???',,'']
+  ['Rembo; Dirt Jar', 'The Move', 'Jul 30 2022', 'Sep 24 2022',56,''],
+  ['Pizza Deliverance; Horse Girl', '???', 'Oct 29 2022','???',,'']
 ];
 
 function hiatusRankCheck(){
